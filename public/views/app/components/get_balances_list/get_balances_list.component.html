@@ -1,0 +1,18 @@
+<div layout="row" layout-align="center center">
+	<span flex></span>
+	<md-list class="md-dense" flex flex-gt-md="50">
+		<md-subheader class="md-no-sticky">Saldos</md-subheader>
+		<md-list-item class="md-2-line" ng-repeat="balance in gb.balances">
+		  <i class="mdi mdi-bell"></i>
+		  <div class="md-list-item-text">
+		    <h3> {{ balance.phone_number }} </h3>
+		    <p><strong>Saldo restante:</strong>{{ balance.balance }}</p>
+		    <p><strong>Saldo restante en segundos:</strong>{{ balance.balance_secs }}</p>
+		    <p><strong>Segundos consumidos:</strong>{{ balance.intakes_secs }}</p>
+		    <p><strong>Total consumido:</strong>{{ balance.total }}</p>
+		  </div>
+			<md-divider></md-divider>
+		</md-list-item>
+	</md-list>
+	<span flex></span>
+</div>
