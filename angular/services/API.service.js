@@ -28,13 +28,14 @@ export class APIService {
 					}
 				})
 				.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
-			      var extractedData;
-			      if (operation === "getList") {
-			        extractedData = data.data;
-			      } else {
-			        extractedData = data;
-			      }
-			      return extractedData;
+					var extractedData;
+					if (operation === "getList") {
+						extractedData = data.data;
+					} else {
+						extractedData = data;
+					}
+					
+					return extractedData;
 			    });
 		});
 	}

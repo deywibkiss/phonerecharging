@@ -34,3 +34,8 @@ Route::get('costs', 'CostsController@get');
 
 Route::post('recharges', 'RechargesController@create');
 Route::get('recharges', 'RechargesController@getAll');
+
+Route::post('intakes', 'IntakesController@create');
+Route::get('intakes', 'IntakesController@getAll');
+
+Route::get('balances', 'BalancesController@getAll');

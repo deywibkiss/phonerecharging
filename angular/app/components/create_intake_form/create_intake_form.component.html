@@ -1,0 +1,16 @@
+<form ng-submit="vm.submit()">
+  
+    <md-input-container>
+      <label>Número:</label>
+      <input type="text" ng-model="vm.phone_number">
+    </md-input-container>
+
+    <md-input-container>
+      <label>Segundos consumidos:</label>
+      <input type="number" ng-model="vm.secs">
+    </md-input-container>
+
+    <md-button type="submit" class="md-primary md-raised">Crear consumo</md-button>
+</form>
+
+<get-intakes-history intakes="vm.intakes"></get-intakes-history> 

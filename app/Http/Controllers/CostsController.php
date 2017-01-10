@@ -15,7 +15,7 @@ class CostsController extends Controller
     		'price' => 'required|integer'
     	]);
 
-    	$cost = new Cost;
+    	$cost = (Cost::find(1) == null) ? new Cost : Cost::find(1)->first();
     	$cost->price = $request->input('price');
 
     	$cost->save();
@@ -27,10 +27,12 @@ class CostsController extends Controller
     // Get the cost
     public function get(){
 
-        $cost = Cost::find(1)->first();
+        $cost = Cost::find(1);
 
-        if( ! $cost )
-            return $response->error('No encontrado', 404);
+        if( $cost == null )
+            return response()->error('Costo no configurado actualmente', 404);
+
+        $cost = $cost->first();
 
         return response()->success(compact('cost'));
     }

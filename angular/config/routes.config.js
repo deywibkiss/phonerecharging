@@ -90,5 +90,23 @@ export function RoutesConfig($stateProvider, $urlRouterProvider) {
                     templateUrl: getView('create_recharge')
                 }
             }
+        })
+
+        .state('app.intakes', {
+            url: '/intakes',
+            views: {
+                'main@': {
+                    templateUrl: getView('intakes')
+                }
+            }
+        })
+
+        .state('app.balances', {
+            url: '/balances',
+            views: {
+                'main@': {
+                    templateUrl: getView('balances')
+                }
+            }
         });
 }

@@ -8,20 +8,23 @@ class CreateCostFormController{
 
     $onInit(){
         this.price = 0;
+        this.id = null;
         this.get();
     }
 
 
     get(){
       this.API.one('costs').get().then((response) => {
-        if(!response.errors){
+          this.id = response.data.cost.id;
           this.price = response.data.cost.price;
-        }
+      }, (err) =>{
+        this.ToastService.error(err.data.errors.message[0]);
       });
     }
 
     submit(){
       var data = {
+        id: this.id,
         price: this.price
       };
       
